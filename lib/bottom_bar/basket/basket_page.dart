@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:organic_market/bottom_bar/basket/widgets/list_basket_items.dart';
+import 'package:organic_market/bottom_bar/basket/widgets/total_price_widget.dart';
+import 'package:organic_market/bottom_bar/common/horizontal_list_products.dart';
 import 'package:organic_market/utils/constants.dart';
 
 @RoutePage()
@@ -20,6 +22,7 @@ class BasketPage extends StatelessWidget {
           'Корзина',
           style: Theme.of(context).textTheme.titleMedium,
         ),
+        centerTitle: true,
         actions: [
           Padding(
             padding: EdgeInsets.only(top: 6.0.h, right: 10.w),
@@ -49,13 +52,30 @@ class BasketPage extends StatelessWidget {
                 SizedBox(
                   height: 20.h,
                 ),
-               ListBasketItems(),
-               Container(height: 100, width: 100, color: Colors.pink,)
+                ListBasketItems(),
+                Padding(
+                  padding: EdgeInsets.only(left: 16.0.w, top: 25.h),
+                  child: Text(
+                    'Рекомендуем',
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          fontSize: 20.sp,
+                        ),
+                  ),
+                ),
+                HorizontalListProducts(),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: Divider(),
+                ),
+                TotalPriceWidget(),
+                SizedBox(
+                  height: MyConstants.kBottomNavBarHeight + 135.h,
+                ),
               ],
             ),
           ),
           Positioned(
-            bottom: MyConstants.kBottomNavBarHeight - 15,
+            bottom: MyConstants.kBottomNavBarHeight,
             left: 0,
             right: 0,
             child: Container(
@@ -63,14 +83,14 @@ class BasketPage extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.onBackground,
-                borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(15),
-                  topLeft: Radius.circular(15),
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(12.r),
+                  topLeft: Radius.circular(12.r),
                 ),
                 boxShadow: [
                   BoxShadow(
                       color: Theme.of(context).colorScheme.shadow,
-                      spreadRadius: 4.h,
+                      spreadRadius: 1.h,
                       blurRadius: 10.h),
                 ],
               ),
@@ -82,10 +102,9 @@ class BasketPage extends StatelessWidget {
                   child: Text(
                     'Перейти к оформлению',
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: Theme.of(context).colorScheme.onBackground,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18.sp
-                    ),
+                        color: Theme.of(context).colorScheme.onBackground,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18.sp),
                   ),
                 ),
               ),

@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:organic_market/routes/router.gr.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 import '../../utils/constants.dart';
@@ -11,7 +13,7 @@ class ProductCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     return ZoomTapAnimation(
        onTap: () {
-        print('ooo');
+        AutoRouter.of(context).push(SubCategoryRoute());
       },
       begin: 1.0,
       end: 0.95,

@@ -9,11 +9,12 @@ import 'package:organic_market/bottom_bar/home/widgets/best_deals_widget.dart';
 import 'package:organic_market/bottom_bar/home/widgets/brands_widget.dart';
 import 'package:organic_market/bottom_bar/home/widgets/popular_category_widget.dart';
 import 'package:organic_market/bottom_bar/home/widgets/promo_widget.dart';
+import 'package:organic_market/routes/router.gr.dart';
 import 'package:organic_market/utils/constants.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(
-              'assets/icons/other/car.svg',
+              MyAssets.kCarIcon,
             ),
             SizedBox(width: 8.w),
             Text(
@@ -51,6 +52,7 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const PromoWidget(),
+                
                 const PopularCategoryWidget(),
                 SizedBox(height: 20.h),
                 const BestDealsWidget(),
@@ -75,6 +77,7 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
 /*import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

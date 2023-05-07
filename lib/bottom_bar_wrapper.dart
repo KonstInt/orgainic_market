@@ -1,27 +1,25 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:organic_market/routes/router.gr.dart';
 
 import 'bottom_bar/bottom_bar.dart';
 
 @RoutePage()
-class BottomBarWrapperPage extends StatefulWidget {
+class BottomBarWrapperPage extends StatelessWidget {
   const BottomBarWrapperPage({super.key});
 
   @override
-  State<BottomBarWrapperPage> createState() => _BottomBarWrapperPageState();
-}
-
-class _BottomBarWrapperPageState extends State<BottomBarWrapperPage> {
-  @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
+        
         extendBody: true,
-        routes: const [
+        routes: [
           HomeRoute(),
           CategoryRoute(),
           FindRoute(),
-          BasketRoute()
+          BasketNoItemRoute(),
+          ProfileRoute(),
         ],
         bottomNavigationBuilder: (_, tabsRouter) {
           return BottomBar(

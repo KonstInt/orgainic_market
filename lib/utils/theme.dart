@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -6,13 +7,21 @@ import 'constants.dart';
 
 ThemeData basicThemeData() => ThemeData(
     colorScheme: const ColorScheme.light(
-        primary: MyColors.kGreenColor,
-        secondary: MyColors.kGreyColor,
-        shadow: MyColors.kLightGreyColor,
-        onBackground: MyColors.kWhiteColor,
-        background: MyColors.kGreyBackground,
-       ),
+      primary: MyColors.kGreenColor,
+      secondary: MyColors.kGreyColor,
+      shadow: MyColors.kShadowGreyColor,
+      onBackground: MyColors.kWhiteColor,
+      background: MyColors.kGreyBackground,
+    ),
     brightness: Brightness.light,
+    appBarTheme: const AppBarTheme(
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: MyColors.kWhiteColor,
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.light,
+      ),
+    ),
+    primaryColor: MyColors.kGreenColor,
     textTheme: TextTheme(
       titleLarge: GoogleFonts.yesevaOne(
         textStyle: TextStyle(
@@ -42,7 +51,8 @@ ThemeData basicThemeData() => ThemeData(
     ),
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
-        overlayColor:  MaterialStateProperty.all(Color.fromARGB(60, 255, 255, 255)),
+        overlayColor:
+            MaterialStateProperty.all(Color.fromARGB(60, 255, 255, 255)),
         animationDuration: const Duration(milliseconds: 10),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(

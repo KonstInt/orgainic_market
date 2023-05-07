@@ -6,23 +6,20 @@ class BottomNavShadow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Transform.translate(
-      offset: const Offset(0, 15),
-      child: Container(
-        height: 15,
-        decoration: BoxDecoration(
-          
-          borderRadius: const BorderRadius.only(
-            topRight: Radius.circular(15),
-            topLeft: Radius.circular(15),
-          ),
-          boxShadow: [
-            BoxShadow(
-                color: Theme.of(context).colorScheme.shadow,
-                spreadRadius: 4.h,
-                blurRadius: 10.h),
-          ],
+    return Container(
+      height: 15,
+      decoration: BoxDecoration(
+        
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(12.r),
+          topLeft: Radius.circular(12.r),
         ),
+        boxShadow: [
+          BoxShadow(
+              color: Theme.of(context).colorScheme.shadow,
+              spreadRadius: 4.h,
+              blurRadius: 10.h),
+        ],
       ),
     );
   }

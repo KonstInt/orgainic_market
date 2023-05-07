@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market/routes/router.gr.dart';
 
 class AboutUsWidget extends StatelessWidget {
   const AboutUsWidget({super.key});
@@ -51,7 +53,9 @@ class AboutUsWidget extends StatelessWidget {
               ),
               Expanded(
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     AutoRouter.of(context).push(ItemRoute());
+                  },
                   child: Padding(
                     padding:
                         EdgeInsets.symmetric(vertical: 8.0.h, horizontal: 4.w),

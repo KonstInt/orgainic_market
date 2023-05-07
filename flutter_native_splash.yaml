@@ -1,3 +1,6 @@
 flutter_native_splash:
   color: "#CFD400"
   image: "assets/splash/custom_splash.png"
+  android_12:
+   color: "#CFD400"
+   image: "assets/splash/android_12_splash.png"

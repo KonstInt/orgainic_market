@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market/bottom_bar/common/item_product.dart';
 
@@ -10,7 +8,7 @@ class HorizontalListProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 260.h,
+      height: 270.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 6,

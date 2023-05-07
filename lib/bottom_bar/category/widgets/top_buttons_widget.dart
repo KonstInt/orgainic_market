@@ -19,8 +19,8 @@ class TopButtons extends StatelessWidget {
                     boxShadow: [
                       BoxShadow(
                         color: Theme.of(context).colorScheme.shadow, //New
-                        blurRadius: 10.0,
-                        offset: Offset(-3.w, 3.h),
+                        blurRadius: 7.0.r,
+                        offset: Offset(-1.w, 3.h),
                       ),
                     ],
                   );

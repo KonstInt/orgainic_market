@@ -12,19 +12,19 @@ class MyApp extends StatelessWidget {
 
   // This widget is the root of your application.
   final appRouter = AppRouter();
+  
+  
   @override
   Widget build(BuildContext context) {
-    
     return ScreenUtilInit(
       designSize: const Size(375, 792),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp.router(
+          routerConfig: appRouter.config(),
           debugShowCheckedModeBanner: false,
           theme: basicThemeData(),
-          routerDelegate: appRouter.delegate(),
-          routeInformationParser: appRouter.defaultRouteParser(),
         );
       },
     );

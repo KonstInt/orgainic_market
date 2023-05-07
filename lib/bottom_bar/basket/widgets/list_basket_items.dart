@@ -2,11 +2,16 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:organic_market/bottom_bar/basket/widgets/price_widget.dart';
 import 'package:organic_market/utils/constants.dart';
+
+import 'items_counter.dart';
 
 class ListBasketItems extends StatelessWidget {
   const ListBasketItems({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +33,16 @@ class ListBasketItems extends StatelessWidget {
 
   Widget basketProductItem(BuildContext context, int index) {
     return InkWell(
+      splashColor: MyColors.kGreyChipBackground,
+      //hoverColor: Colors.red,
+      highlightColor: Theme.of(context).colorScheme.background,
+      onTap: () {},
       child: SizedBox(
         height: 70.h,
         width: double.infinity,
         child: Row(
           children: [
+          //Checkbox(value: value, onChanged: (value){ value = !value!;}),
             SizedBox(
               width: 70.r,
               height: 70.r,
@@ -59,73 +69,23 @@ class ListBasketItems extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                         ),
                   ),
-                  price(1900, true, 1000, context)
+                  Row(
+                    children: [
+                      const PriceWidget(
+                        price: 1900,
+                        isSale: true,
+                        newPrice: 1000,
+                      ),
+                      const Spacer(),
+                      ItemsCounter(),
+                    ],
+                  )
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
-    );
-  }
-
-  Widget price(
-      double price, bool isSale, double newPrice, BuildContext context) {
-    if (isSale) {
-      return Row(
-        children: [
-          Text(
-            newPrice.toInt().toString() + ' ₽',
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w600,
-                  color: MyColors.kRedColor,
-                ),
-          ),
-          SizedBox(
-            width: 8.w,
-          ),
-          
-          Stack(
-            children: [
-              Text(
-                '${price.toInt()} ₽',
-                overflow: TextOverflow.ellipsis,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: Theme.of(context).colorScheme.secondary,
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w400,
-                    ),
-              ),
-              Transform.rotate(
-                      angle: -10*pi/180,
-                child: Positioned(
-                  top: 0,
-                  bottom: 0,
-                  child: SizedBox(
-                      width: 40,
-                      child: Divider(
-                        thickness: 3,
-                        color: MyColors.kRedColor,
-                      ),),
-                ),
-              )
-            ],
-          ),
-        ],
-      );
-    }
-
-    return Text(
-      price.toInt().toString() + ' ₽',
-      maxLines: 1,
-      overflow: TextOverflow.ellipsis,
-      style: Theme.of(context)
-          .textTheme
-          .titleMedium
-          ?.copyWith(fontSize: 18.sp, fontWeight: FontWeight.w600),
     );
   }
 }

@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:organic_market/routes/router.gr.dart';
 import 'package:organic_market/utils/constants.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
@@ -11,7 +13,7 @@ class ItemProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return ZoomTapAnimation(
       onTap: () {
-        print('ooo');
+        AutoRouter.of(context).push(ItemRoute());
       },
       begin: 1.0,
       end: 0.95,
@@ -38,7 +40,7 @@ class ItemProduct extends StatelessWidget {
           children: [
             SizedBox(
               width: double.infinity,
-              height: 130.r,
+              height: 130.h,
               child: ClipRRect(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(12.r),
@@ -84,7 +86,7 @@ class ItemProduct extends StatelessWidget {
                   padding: EdgeInsets.only(right: 12.w),
                   child: TextButton(
                     onPressed: () {
-                      print('bbb');
+
                     },
                     child: SvgPicture.asset(
                       MyAssets.kBasketIcon,
