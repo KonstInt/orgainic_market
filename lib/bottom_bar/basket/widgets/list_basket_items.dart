@@ -4,14 +4,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:organic_market/bottom_bar/basket/widgets/basket_product_item.dart';
 import 'package:organic_market/bottom_bar/basket/widgets/price_widget.dart';
 import 'package:organic_market/utils/constants.dart';
 
 import 'items_counter.dart';
 
-class ListBasketItems extends StatelessWidget {
-  const ListBasketItems({super.key});
+class ListBasketItems extends StatefulWidget {
+  bool deletedMode;
+  ListBasketItems({super.key, required this.deletedMode});
+  
+  @override
+  State<ListBasketItems> createState() => _ListBasketItemsState();
+}
 
+class _ListBasketItemsState extends State<ListBasketItems> {
+  
+  List<int> deleteIndexes = [];
+  void setDeleteIndexes(int index, bool delete){
+      if(delete){
+        deleteIndexes.add(index);
+      }
+      else{
+        deleteIndexes.remove(index);
+      }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,65 +44,15 @@ class ListBasketItems extends StatelessWidget {
           );
         },
         itemBuilder: (context, index) {
-          return basketProductItem(context, index);
+          return BasketProductItem(
+            isDeletedMode: widget.deletedMode,
+            index: index,
+            itemId: 1,
+            quantity: 1,
+            callbackDeletedIndex: setDeleteIndexes,
+            );
         });
   }
 
-  Widget basketProductItem(BuildContext context, int index) {
-    return InkWell(
-      splashColor: MyColors.kGreyChipBackground,
-      //hoverColor: Colors.red,
-      highlightColor: Theme.of(context).colorScheme.background,
-      onTap: () {},
-      child: SizedBox(
-        height: 70.h,
-        width: double.infinity,
-        child: Row(
-          children: [
-          //Checkbox(value: value, onChanged: (value){ value = !value!;}),
-            SizedBox(
-              width: 70.r,
-              height: 70.r,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(15.r),
-                child: FittedBox(
-                  fit: BoxFit.fill,
-                  child: Image.asset(MyAssets.kMolokoImage),
-                ),
-              ),
-            ),
-            SizedBox(
-              width: 16.w,
-            ),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
-                  ),
-                  Row(
-                    children: [
-                      const PriceWidget(
-                        price: 1900,
-                        isSale: true,
-                        newPrice: 1000,
-                      ),
-                      const Spacer(),
-                      ItemsCounter(),
-                    ],
-                  )
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+  
 }

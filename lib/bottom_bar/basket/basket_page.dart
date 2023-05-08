@@ -8,9 +8,15 @@ import 'package:organic_market/bottom_bar/common/horizontal_list_products.dart';
 import 'package:organic_market/utils/constants.dart';
 
 @RoutePage()
-class BasketPage extends StatelessWidget {
+class BasketPage extends StatefulWidget {
   const BasketPage({super.key});
 
+  @override
+  State<BasketPage> createState() => _BasketPageState();
+}
+
+class _BasketPageState extends State<BasketPage> {
+  bool deletedMode = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +35,11 @@ class BasketPage extends StatelessWidget {
             child: IconButton(
               splashRadius: 20,
               highlightColor: MyColors.kRedColor.withOpacity(0.6),
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  deletedMode = !deletedMode;
+                });
+              },
               icon: SvgPicture.asset(MyAssets.kTrashIcon),
             ),
           ),
@@ -52,7 +62,7 @@ class BasketPage extends StatelessWidget {
                 SizedBox(
                   height: 20.h,
                 ),
-                ListBasketItems(),
+                ListBasketItems(deletedMode: deletedMode),
                 Padding(
                   padding: EdgeInsets.only(left: 16.0.w, top: 25.h),
                   child: Text(
@@ -97,16 +107,42 @@ class BasketPage extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.only(
                     top: 16.0.h, bottom: 31.h, left: 16.w, right: 16.w),
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Перейти к оформлению',
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.onBackground,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18.sp),
-                  ),
-                ),
+                child: !deletedMode
+                    ? TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Перейти к оформлению',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium
+                              ?.copyWith(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onBackground,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 18.sp),
+                        ),
+                      )
+                    : TextButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                            MyColors.kRedColor,
+                          ),
+                        ),
+                        child: Text(
+                          'Удалить',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium
+                              ?.copyWith(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onBackground,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 18.sp),
+                        ),
+                      ),
               ),
             ),
           )

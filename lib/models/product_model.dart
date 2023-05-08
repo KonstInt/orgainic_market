@@ -1,23 +1,23 @@
 class ProductModel{
-  final String productId;
+  final int productId;
   final String title;
-  final String body;
+  final String description;
   final String image;
-  final String measure;
+  final String measureType;
   final double step;
   final double baseMeasure;
   final double? bigMeasure;
   final double? saleMeasure;
-  bool isSale;
+  final bool isSale;
   final int? saleSize; 
   final bool isOrganic;
   final bool isExpress;
   final DateTime timeDelivered;
   ProductModel({
     required this.title, 
-    required this.body, 
+    required this.description, 
     required this.image, 
-    required this.measure,
+    required this.measureType,
     required this.step,
     required this.baseMeasure,
     this.bigMeasure,
