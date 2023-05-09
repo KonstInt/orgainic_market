@@ -11,9 +11,12 @@ import 'package:organic_market/utils/constants.dart';
 import 'items_counter.dart';
 
 class ListBasketItems extends StatefulWidget {
-  bool deletedMode;
+  bool deletedMode = false;
   ListBasketItems({super.key, required this.deletedMode});
-  
+  void setDeleteIndexes(){
+    deletedMode = !deletedMode;
+    
+  }
   @override
   State<ListBasketItems> createState() => _ListBasketItemsState();
 }

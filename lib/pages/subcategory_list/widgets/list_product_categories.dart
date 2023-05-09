@@ -10,7 +10,11 @@ class ListProductCategories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: 2,
+        //physics: NeverScrollableScrollPhysics(),
+        //shrinkWrap: true,
+        //primary: false,
+        cacheExtent: 20000.h,
+        itemCount: 33,
         itemBuilder: (context, index) {
           return itemBuild(context, index);
         });

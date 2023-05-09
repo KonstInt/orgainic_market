@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market/bloc/product_list/product_list_bloc.dart';
 
 import '../../common/horizontal_list_products.dart';
 
 class AlreadyBoughtWidget extends StatelessWidget {
-  const AlreadyBoughtWidget({super.key});
-
+  AlreadyBoughtWidget({super.key});
+  
   @override
   Widget build(BuildContext context) {
     return Column(

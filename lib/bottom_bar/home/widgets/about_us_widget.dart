@@ -54,7 +54,6 @@ class AboutUsWidget extends StatelessWidget {
               Expanded(
                 child: TextButton(
                   onPressed: () {
-                     AutoRouter.of(context).push(ItemRoute());
                   },
                   child: Padding(
                     padding:

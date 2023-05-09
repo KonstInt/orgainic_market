@@ -2,18 +2,20 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:organic_market/models/short_product_model.dart';
 import 'package:organic_market/routes/router.gr.dart';
 import 'package:organic_market/utils/constants.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class ItemProduct extends StatelessWidget {
-  const ItemProduct({super.key});
+  final ShortProductModel product;
+  const ItemProduct({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
     return ZoomTapAnimation(
       onTap: () {
-        AutoRouter.of(context).push(ItemRoute());
+        AutoRouter.of(context).push(ItemRoute(productId: product.productId));
       },
       begin: 1.0,
       end: 0.95,
@@ -47,7 +49,7 @@ class ItemProduct extends StatelessWidget {
                   topRight: Radius.circular(12.r),
                 ),
                 child: FittedBox(
-                  child: Image.asset(MyAssets.kMolokoImage),
+                  child: Image.network(product.image),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -55,14 +57,17 @@ class ItemProduct extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 12.w, top: 5.h),
               child: Text(
-                'Масло сливочное традиционное',
+                product.title,
                 style: Theme.of(context).textTheme.bodyMedium,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
             Padding(
               padding: EdgeInsets.only(left: 12.w, top: 4.h),
               child: Text(
-                'За 0,35 кг',
+                
+                'за ${product.baseMeasure.toStringAsFixed(1)} ${product.measureType}',
                 style: Theme.of(context)
                     .textTheme
                     .bodyMedium
@@ -76,7 +81,7 @@ class ItemProduct extends StatelessWidget {
                   padding:
                       EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
                   child: Text(
-                    '379₽',
+                    '${product.price.toStringAsFixed(1)}₽',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontSize: 18.sp, fontWeight: FontWeight.w600),
                   ),

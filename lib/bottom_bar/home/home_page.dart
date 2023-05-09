@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:organic_market/bottom_bar/common/bottom_nav_shadow.dart';
@@ -9,13 +10,17 @@ import 'package:organic_market/bottom_bar/home/widgets/best_deals_widget.dart';
 import 'package:organic_market/bottom_bar/home/widgets/brands_widget.dart';
 import 'package:organic_market/bottom_bar/home/widgets/popular_category_widget.dart';
 import 'package:organic_market/bottom_bar/home/widgets/promo_widget.dart';
+import 'package:organic_market/pages/item/widgets/list_item_tag.dart';
 import 'package:organic_market/routes/router.gr.dart';
 import 'package:organic_market/utils/constants.dart';
+
+import '../../bloc/product_list/product_list_bloc.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,12 +57,13 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const PromoWidget(),
-                
                 const PopularCategoryWidget(),
                 SizedBox(height: 20.h),
-                const BestDealsWidget(),
+                BestDealsWidget(),
+                
                 SizedBox(height: 20.h),
-                const AlreadyBoughtWidget(),
+                AlreadyBoughtWidget(),
+                
                 SizedBox(height: 20.h),
                 BrandsWidget(),
                 SizedBox(height: 20.h),
@@ -76,6 +82,9 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+  
+  
+  
 }
 
 /*import 'package:auto_route/auto_route.dart';

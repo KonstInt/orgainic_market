@@ -3,6 +3,7 @@ class ProductModel{
   final String title;
   final String description;
   final String image;
+  final double price;
   final String measureType;
   final double step;
   final double baseMeasure;
@@ -16,6 +17,7 @@ class ProductModel{
   ProductModel({
     required this.title, 
     required this.description, 
+    required this.price,
     required this.image, 
     required this.measureType,
     required this.step,

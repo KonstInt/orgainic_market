@@ -5,7 +5,7 @@ import 'package:organic_market/pages/item/widgets/price_bottom_item.dart';
 import 'package:organic_market/utils/constants.dart';
 
 class BottomItem extends StatelessWidget {
-  final String productId;
+  final int productId;
   final bool isSale;
   final double mPrice;
   final int? sale;

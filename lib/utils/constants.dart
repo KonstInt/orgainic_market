@@ -18,6 +18,7 @@ class MyColors {
 }
 
 class MyConstants {
+  static String baseUrl = 'https://fakestoreapi.com';
   static double kBottomNavBarHeight = Platform.isIOS? kBottomNavigationBarHeight+20.h : kBottomNavigationBarHeight-10.h;
 }
 

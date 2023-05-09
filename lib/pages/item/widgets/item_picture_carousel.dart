@@ -25,7 +25,7 @@ class _ItemPictureCarouselState extends State<ItemPictureCarousel> {
           itemBuilder: (context, index, realIndex) {
             final urlImage = widget.productImages[index];
             return Image.network(
-              'https://i.ytimg.com/vi/vnhaX73vSj4/maxresdefault.jpg',
+              urlImage,
               fit: BoxFit.fill,
               loadingBuilder: (BuildContext context, Widget child,
                   ImageChunkEvent? loadingProgress) {
