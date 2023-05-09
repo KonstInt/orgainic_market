@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:dio/dio.dart';
+import 'package:organic_market/bloc/categories_bloc/categories_bloc.dart';
+import 'package:organic_market/models/category_model.dart';
 import 'package:organic_market/models/product_model.dart';
 import 'package:organic_market/models/short_product_model.dart';
 import 'package:organic_market/utils/constants.dart';
@@ -16,9 +18,8 @@ class AppDioApi {
     dio = Dio(options);
   }
   Future<ProductModel> getProduct(int productId) async {
-    Random random = new Random();
+    Random random = Random();
     bool sale = random.nextBool();
-
     final response = await dio.get("/products/$productId");
     final data = response.data as Map<String, dynamic>;
     ProductModel productModel = ProductModel(
@@ -38,11 +39,10 @@ class AppDioApi {
       isOrganic: true, 
       timeDelivered: DateTime.now());
       return productModel;
-
   }
 
-  Future<List<ShortProductModel>> getProductList(int productListId) async {
-    final response = await dio.get("/products");
+  Future<List<ShortProductModel>> getProductList(int productListId, String category) async {
+    final response = await dio.get("/products$category");
     final data = response.data;
     List<ShortProductModel> productList = [];
     for(Map<String, dynamic> dataProduct in data){
@@ -53,9 +53,20 @@ class AppDioApi {
                  baseMeasure: 1, 
                  measureType: 'кг', 
                  price: dataProduct['price'].toDouble(),));
-    }
-    
-            
+    }       
     return productList;
   }  
+
+  /*Future<List<CategoryModel>> getCategies() async {
+    //final response = await dio.get("/categories");
+    return null;
+  }*/
+  Future<List<String>> getSubcategories() async {
+    final response = await dio.get("/products/categories");
+    List<String> categoriesList = [];
+    for(String category in response.data){
+      categoriesList.add(category);
+    }
+    return categoriesList;
+  }
 }

@@ -5,5 +5,6 @@ abstract class ProductListEvent {}
 
 class ProductListLoadEvent extends ProductListEvent{
   final int listId;
-  ProductListLoadEvent({required this.listId});
+  final String? category;
+  ProductListLoadEvent({required this.listId, this.category});
 }

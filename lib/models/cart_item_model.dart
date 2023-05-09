@@ -1,8 +1,8 @@
 class CartModel{
-  int id;
-  int userId;
-  String date;
-  List<CartItem> productList;
+  final int id;
+  final int userId;
+  final String date;
+  final List<CartItem> productList;
   CartModel({required this.id, required this.userId, required this.date, required this.productList});
 
 }

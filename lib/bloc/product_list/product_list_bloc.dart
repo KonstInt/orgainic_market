@@ -15,10 +15,16 @@ class ProductListBloc extends Bloc<ProductListEvent, ProductListState> {
     on<ProductListLoadEvent>(_onProductLoad);
   }
 
-  FutureOr<void> _onProductLoad(ProductListLoadEvent event, Emitter<ProductListState> emit) async {
-  emit(ProductListLoadingState());
+  FutureOr<void> _onProductLoad(
+      ProductListLoadEvent event, Emitter<ProductListState> emit) async {
+    emit(ProductListLoadingState());
     try {
-      product_list = await AppDioApi().getProductList(1);
+      if (event.category != null) {
+        product_list =
+            await AppDioApi().getProductList(1, '/category/${event.category!}');
+      } else {
+        product_list = await AppDioApi().getProductList(1, '');
+      }
       emit(ProductListLoadedState(productList: product_list));
     } catch (e) {
       if (e == SocketException) {

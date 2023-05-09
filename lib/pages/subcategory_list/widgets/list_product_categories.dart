@@ -5,7 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market/pages/subcategory_list/widgets/products_category_grid.dart';
 
 class ListProductCategories extends StatelessWidget {
-  const ListProductCategories({super.key});
+  final String subcategory;
+  const ListProductCategories({super.key, required this.subcategory});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class ListProductCategories extends StatelessWidget {
                 .copyWith(fontSize: 18.sp),
           ),
         ),
-        ProductCategoryGrid(),
+        ProductCategoryGrid(subcategory: subcategory),
       ],
     );
   }

@@ -5,12 +5,13 @@ import 'package:organic_market/bloc/product_list/product_list_bloc.dart';
 import 'package:organic_market/bottom_bar/common/item_product.dart';
 
 class ProductCategoryGrid extends StatelessWidget {
-  const ProductCategoryGrid({super.key});
+  final String subcategory;
+  const ProductCategoryGrid({super.key,  required this.subcategory});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ProductListBloc()..add(ProductListLoadEvent(listId: 1)),
+      create: (context) => ProductListBloc()..add(ProductListLoadEvent(listId: 1, category: subcategory)),
       child: BlocBuilder<ProductListBloc, ProductListState>(
         builder: (context, state) {
           if(state is ProductListLoadedState)

@@ -7,15 +7,18 @@ import 'package:organic_market/utils/constants.dart';
 class BottomItem extends StatelessWidget {
   final int productId;
   final bool isSale;
+  final String measureType;
   final double mPrice;
   final int? sale;
 
   BottomItem({
     super.key, 
     required this.productId, 
+    required this.measureType,
     required this.isSale,
     required this.mPrice,
-    this.sale = 0});
+    this.sale = 0
+    });
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +32,7 @@ class BottomItem extends StatelessWidget {
             price: mPrice,
             isSale: isSale,
             newPrice: mPrice - mPrice*sale!/100,
+            measureType: measureType,
           ),
         ),
         Padding(

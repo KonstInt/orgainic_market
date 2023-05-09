@@ -8,12 +8,14 @@ import 'package:organic_market/utils/constants.dart';
 class PriceBottomItemWidget extends StatelessWidget {
   final double price;
   final bool isSale;
+  final String measureType;
   final double? newPrice;
 
   const PriceBottomItemWidget({
     super.key,
-    required double this.price,
-    required bool this.isSale,
+    required this.price,
+    required this.measureType,
+    required this.isSale,
     double? this.newPrice,
   });
   @override
@@ -38,7 +40,7 @@ class PriceBottomItemWidget extends StatelessWidget {
                         ),
                   ),
                   Text(
-                    ' / кг ',
+                    ' / $measureType',
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           color: Theme.of(context).colorScheme.secondary,
@@ -82,7 +84,7 @@ class PriceBottomItemWidget extends StatelessWidget {
                     ),
               ),
               Text(
-                '/ кг',
+                '/ $measureType',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(

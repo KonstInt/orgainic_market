@@ -11,7 +11,7 @@ class HorizontalListProducts extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => 
-                      ProductListBloc()..add(ProductListLoadEvent(listId: 1)),
+                      ProductListBloc()..add(ProductListLoadEvent(listId: 1, )),
       child: BlocBuilder<ProductListBloc, ProductListState>(
         builder: (context, state) {
           if (state is ProductListLoadedState) {

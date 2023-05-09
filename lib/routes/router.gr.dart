@@ -114,17 +114,19 @@ abstract class $AppRouter extends _i12.RootStackRouter {
       );
     },
     SubCategoryRoute.name: (routeData) {
-      final args = routeData.argsAs<SubCategoryRouteArgs>(
-          orElse: () => const SubCategoryRouteArgs());
       return _i12.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i10.SubCategoryPage(key: args.key),
+        child: const _i10.SubCategoryPage(),
       );
     },
     SubCategoryListRoute.name: (routeData) {
+      final args = routeData.argsAs<SubCategoryListRouteArgs>();
       return _i12.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i11.SubCategoryListPage(),
+        child: _i11.SubCategoryListPage(
+          key: args.key,
+          subcategory: args.subcategory,
+        ),
       );
     },
   };
@@ -353,43 +355,53 @@ class ItemRouteArgs {
 
 /// generated route for
 /// [_i10.SubCategoryPage]
-class SubCategoryRoute extends _i12.PageRouteInfo<SubCategoryRouteArgs> {
-  SubCategoryRoute({
-    _i13.Key? key,
-    List<_i12.PageRouteInfo>? children,
-  }) : super(
+class SubCategoryRoute extends _i12.PageRouteInfo<void> {
+  const SubCategoryRoute({List<_i12.PageRouteInfo>? children})
+      : super(
           SubCategoryRoute.name,
-          args: SubCategoryRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'SubCategoryRoute';
 
-  static const _i12.PageInfo<SubCategoryRouteArgs> page =
-      _i12.PageInfo<SubCategoryRouteArgs>(name);
-}
-
-class SubCategoryRouteArgs {
-  const SubCategoryRouteArgs({this.key});
-
-  final _i13.Key? key;
-
-  @override
-  String toString() {
-    return 'SubCategoryRouteArgs{key: $key}';
-  }
+  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i11.SubCategoryListPage]
-class SubCategoryListRoute extends _i12.PageRouteInfo<void> {
-  const SubCategoryListRoute({List<_i12.PageRouteInfo>? children})
-      : super(
+class SubCategoryListRoute
+    extends _i12.PageRouteInfo<SubCategoryListRouteArgs> {
+  SubCategoryListRoute({
+    _i13.Key? key,
+    required String subcategory,
+    List<_i12.PageRouteInfo>? children,
+  }) : super(
           SubCategoryListRoute.name,
+          args: SubCategoryListRouteArgs(
+            key: key,
+            subcategory: subcategory,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'SubCategoryListRoute';
 
-  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
+  static const _i12.PageInfo<SubCategoryListRouteArgs> page =
+      _i12.PageInfo<SubCategoryListRouteArgs>(name);
+}
+
+class SubCategoryListRouteArgs {
+  const SubCategoryListRouteArgs({
+    this.key,
+    required this.subcategory,
+  });
+
+  final _i13.Key? key;
+
+  final String subcategory;
+
+  @override
+  String toString() {
+    return 'SubCategoryListRouteArgs{key: $key, subcategory: $subcategory}';
+  }
 }

@@ -349,12 +349,15 @@ class _ItemPageState extends State<ItemPage> with TickerProviderStateMixin {
                           productId: state.product.productId,
                           isSale: false,
                           mPrice: state.product.price,
+                          measureType: state.product.measureType,
+                          
                         ),
                         BottomItem(
                           productId: state.product.productId,
                           isSale: state.product.isSale,
                           mPrice: state.product.isSale ? state.product.saleMeasure!*state.product.price : state.product.bigMeasure!*state.product.price,
                           sale: state.product.saleSize,
+                          measureType: state.product.measureType,
                         ),
                       ],
                     ),
