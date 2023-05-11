@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:organic_market/dio/app_dio_api.dart';
+import 'package:organic_market/repos/dio/app_dio_api.dart';
 import 'package:organic_market/models/product_model.dart';
 
 part 'product_screen_event.dart';

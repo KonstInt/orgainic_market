@@ -10,16 +10,16 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i11;
 import 'package:flutter/material.dart' as _i12;
-import 'package:organic_market/bottom_bar/basket/basket_wrapper.dart' as _i2;
-import 'package:organic_market/bottom_bar/category/category_page.dart' as _i3;
-import 'package:organic_market/bottom_bar/find/find_page.dart' as _i5;
-import 'package:organic_market/bottom_bar/home/home_page.dart' as _i1;
-import 'package:organic_market/bottom_bar/profile/profile_page.dart' as _i4;
+import 'package:organic_market/ui/bottom_bar/basket/basket_wrapper.dart' as _i2;
+import 'package:organic_market/ui/bottom_bar/category/category_page.dart' as _i3;
+import 'package:organic_market/ui/bottom_bar/find/find_page.dart' as _i5;
+import 'package:organic_market/ui/bottom_bar/home/home_page.dart' as _i1;
+import 'package:organic_market/ui/bottom_bar/profile/profile_page.dart' as _i4;
 import 'package:organic_market/bottom_bar_wrapper.dart' as _i6;
-import 'package:organic_market/pages/empty/empty_page.dart' as _i7;
-import 'package:organic_market/pages/item/item_page.dart' as _i8;
-import 'package:organic_market/pages/subcategory/subcategory_page.dart' as _i9;
-import 'package:organic_market/pages/subcategory_list/subcategoty_list_page.dart'
+import 'package:organic_market/ui/pages/empty/empty_page.dart' as _i7;
+import 'package:organic_market/ui/pages/item/item_page.dart' as _i8;
+import 'package:organic_market/ui/pages/subcategory/subcategory_page.dart' as _i9;
+import 'package:organic_market/ui/pages/subcategory_list/subcategoty_list_page.dart'
     as _i10;
 
 abstract class $AppRouter extends _i11.RootStackRouter {

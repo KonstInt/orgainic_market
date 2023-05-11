@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:organic_market/bottom_bar/category/category_page.dart';
+import 'package:organic_market/ui/bottom_bar/category/category_page.dart';
 import 'package:organic_market/routes/router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Page,Route')

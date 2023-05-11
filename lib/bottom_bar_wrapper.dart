@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:organic_market/routes/router.gr.dart';
 
 import 'bloc/cart_bloc/cart_bloc.dart';
-import 'bottom_bar/bottom_bar.dart';
+import 'ui/bottom_bar/bottom_bar.dart';
 
 @RoutePage()
 class BottomBarWrapperPage extends StatelessWidget {

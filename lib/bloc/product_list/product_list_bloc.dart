@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:organic_market/dio/app_dio_api.dart';
+import 'package:organic_market/repos/dio/app_dio_api.dart';
 import 'package:organic_market/models/short_product_model.dart';
 
 part 'product_list_event.dart';
