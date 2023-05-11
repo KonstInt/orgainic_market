@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:organic_market/bloc/cart_bloc/cart_bloc.dart';
 import 'package:organic_market/pages/item/widgets/price_bottom_item.dart';
 import 'package:organic_market/utils/constants.dart';
 
@@ -38,7 +40,10 @@ class BottomItem extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(bottom: 36.h, top: 13.5.h, right: 8.w),
           child: TextButton(
-            onPressed: () {},
+            onPressed: () {
+              CartBloc cartBloc = context.read<CartBloc>();
+                       cartBloc.add(AddToCartEvent(itemId: 1));
+            },
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 7.h),
               child: Row(

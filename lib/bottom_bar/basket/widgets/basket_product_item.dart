@@ -2,21 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organic_market/bottom_bar/basket/widgets/items_counter.dart';
 import 'package:organic_market/bottom_bar/basket/widgets/price_widget.dart';
+import 'package:organic_market/models/cart_model.dart';
 
 import '../../../utils/constants.dart';
 
 class BasketProductItem extends StatefulWidget {
   bool isDeletedMode;
   final int index;
-  final int itemId;
-  int quantity;
+  CartProducts productInCart;
   final Function callbackDeletedIndex;
   BasketProductItem(
       {super.key,
       required this.isDeletedMode,
       required this.index,
-      required this.itemId,
-      required this.quantity,
+      required this.productInCart,
       required this.callbackDeletedIndex});
   @override
   State<BasketProductItem> createState() => _BasketProductItemState();
@@ -26,7 +25,7 @@ class _BasketProductItemState extends State<BasketProductItem> {
   bool checkTrigger = false;
   void callbackQuantity(int quantity){
     setState(() {
-      widget.quantity = quantity;
+      widget.productInCart.quantity = quantity;
     });
  
   }
@@ -66,7 +65,7 @@ class _BasketProductItemState extends State<BasketProductItem> {
                 borderRadius: BorderRadius.circular(15.r),
                 child: FittedBox(
                   fit: BoxFit.fill,
-                  child: Image.asset(MyAssets.kMolokoImage),
+                  child: Image.network(widget.productInCart.product.image),
                 ),
               ),
             ),
@@ -79,7 +78,9 @@ class _BasketProductItemState extends State<BasketProductItem> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
+                    widget.productInCart.product.title,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
@@ -88,15 +89,16 @@ class _BasketProductItemState extends State<BasketProductItem> {
                   Row(
                     children: [
                      PriceWidget(
-                        price: widget.quantity * 1900,
-                        isSale: true,
-                        newPrice: widget.quantity * 1000,
+                        price: widget.productInCart.quantity * widget.productInCart.product.price,
+                        isSale: widget.productInCart.product.isSale,
+                        newPrice: widget.productInCart.product.isSale ? 
+                        widget.productInCart.quantity * widget.productInCart.product.price*(1-widget.productInCart.product.saleSize!*1.0/100):null,
                       ),
                       const Spacer(),
                       ItemsCounter(
-                        measureType: "kg",
-                        itemStep: 0.7,
-                        quantity: widget.quantity,
+                        measureType: widget.productInCart.product.measureType,
+                        itemStep: widget.productInCart.product.step,
+                        quantity: widget.productInCart.quantity,
                         callbackChangeCounter: callbackQuantity,
                       ),
                     ],

@@ -7,7 +7,7 @@ class CartInitial extends CartState {}
 
 class CartLoadingState extends CartState{}
 class CartLoadedState extends CartState{
-  final List<ProductModel> products;
+  final List<CartProducts> products;
   CartLoadedState({required this.products});
 }
 

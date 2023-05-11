@@ -5,11 +5,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:organic_market/bottom_bar/basket/widgets/list_basket_items.dart';
 import 'package:organic_market/bottom_bar/basket/widgets/total_price_widget.dart';
 import 'package:organic_market/bottom_bar/common/horizontal_list_products.dart';
+import 'package:organic_market/models/cart_model.dart';
 import 'package:organic_market/utils/constants.dart';
 
-@RoutePage()
 class BasketPage extends StatefulWidget {
-  const BasketPage({super.key});
+  List<CartProducts> cartProducts;
+  BasketPage({super.key, required this.cartProducts});
 
   @override
   State<BasketPage> createState() => _BasketPageState();
@@ -62,7 +63,7 @@ class _BasketPageState extends State<BasketPage> {
                 SizedBox(
                   height: 20.h,
                 ),
-                ListBasketItems(deletedMode: deletedMode),
+                ListBasketItems(deletedMode: deletedMode, cartProducts: widget.cartProducts),
                 Padding(
                   padding: EdgeInsets.only(left: 16.0.w, top: 25.h),
                   child: Text(

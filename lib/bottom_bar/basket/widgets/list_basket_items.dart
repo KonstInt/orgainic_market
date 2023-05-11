@@ -6,13 +6,15 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:organic_market/bottom_bar/basket/widgets/basket_product_item.dart';
 import 'package:organic_market/bottom_bar/basket/widgets/price_widget.dart';
+import 'package:organic_market/models/cart_model.dart';
 import 'package:organic_market/utils/constants.dart';
 
 import 'items_counter.dart';
 
 class ListBasketItems extends StatefulWidget {
+  List<CartProducts> cartProducts;
   bool deletedMode = false;
-  ListBasketItems({super.key, required this.deletedMode});
+  ListBasketItems({super.key, required this.deletedMode, required this.cartProducts});
   void setDeleteIndexes(){
     deletedMode = !deletedMode;
     
@@ -50,8 +52,7 @@ class _ListBasketItemsState extends State<ListBasketItems> {
           return BasketProductItem(
             isDeletedMode: widget.deletedMode,
             index: index,
-            itemId: 1,
-            quantity: 1,
+            productInCart: widget.cartProducts[index],
             callbackDeletedIndex: setDeleteIndexes,
             );
         });

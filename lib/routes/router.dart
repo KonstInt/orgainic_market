@@ -85,11 +85,9 @@ class AppRouter extends $AppRouter {
               children: [
                 AutoRoute(
                   path: ':basket',
-                  page: BasketRoute.page,
+                  page: BasketWrapperRoute.page,
                 ),
-                AutoRoute(
-                  path: ':no_items__basket',
-                  page: BasketNoItemRoute.page),
+                
                 CustomRoute(
                     path: ':item',
                     page: ItemRoute.page,

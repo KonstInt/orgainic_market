@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:organic_market/bloc/cart_bloc/cart_bloc.dart';
 import 'package:organic_market/models/short_product_model.dart';
 import 'package:organic_market/routes/router.gr.dart';
 import 'package:organic_market/utils/constants.dart';
@@ -91,7 +93,8 @@ class ItemProduct extends StatelessWidget {
                   padding: EdgeInsets.only(right: 12.w),
                   child: TextButton(
                     onPressed: () {
-
+                       CartBloc cartBloc = context.read<CartBloc>();
+                       cartBloc.add(AddToCartEvent(itemId: 1));
                     },
                     child: SvgPicture.asset(
                       MyAssets.kBasketIcon,

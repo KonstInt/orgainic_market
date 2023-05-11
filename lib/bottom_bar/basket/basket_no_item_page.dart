@@ -5,7 +5,6 @@ import 'package:organic_market/bottom_bar/common/bottom_nav_shadow.dart';
 import 'package:organic_market/routes/router.gr.dart';
 import 'package:organic_market/utils/constants.dart';
 
-@RoutePage()
 class BasketNoItemPage extends StatelessWidget {
   const BasketNoItemPage({super.key});
 

@@ -6,7 +6,7 @@ import 'package:organic_market/utils/theme.dart';
 void main() {
   runApp( MyApp());
 }
-
+int myGlobalI = 0;
 class MyApp extends StatelessWidget {
    MyApp({super.key});
   final appRouter = AppRouter();
