@@ -52,7 +52,7 @@ ThemeData basicThemeData() => ThemeData(
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
         overlayColor:
-            MaterialStateProperty.all(Color.fromARGB(60, 255, 255, 255)),
+            MaterialStateProperty.all(const Color.fromARGB(60, 255, 255, 255)),
         animationDuration: const Duration(milliseconds: 10),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
