@@ -21,7 +21,7 @@ class ProfilePage extends StatelessWidget {
         elevation: 5,
         backgroundColor: Theme.of(context).colorScheme.onBackground,
         title: Text(
-          'Профиль',
+          MyStrings.kProfile,
           style: Theme.of(context).textTheme.titleMedium,
         ),
         centerTitle: true,
@@ -57,11 +57,11 @@ class ProfilePage extends StatelessWidget {
                         SizedBox(
                           height: 30.h,
                         ),
-                        const ProfileRouteButton(text: 'Личные данные'),
-                        const ProfileRouteButton(text: 'Мои заказы'),
-                        const ProfileRouteButton(text: 'Мои адреса'),
-                        const ProfileRouteButton(text: 'Способы оплаты'),
-                        const ProfileRouteButton(text: 'Связаться с нами'),
+                        const ProfileRouteButton(text: MyStrings.kPrivateData),
+                        const ProfileRouteButton(text: MyStrings.kMyBought),
+                        const ProfileRouteButton(text: MyStrings.kMyAddress),
+                        const ProfileRouteButton(text: MyStrings.kPaymentWays),
+                        const ProfileRouteButton(text: MyStrings.kMyContactUs),
                         const Spacer(),
                         SizedBox(height: 10.h),
                         Padding(
@@ -73,7 +73,7 @@ class ProfilePage extends StatelessWidget {
                                 width: 10.w,
                               ),
                               Text(
-                                "Выйти",
+                                MyStrings.kExit,
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyMedium!

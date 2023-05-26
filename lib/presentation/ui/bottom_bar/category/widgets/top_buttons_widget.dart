@@ -66,7 +66,7 @@ class TopButtons extends StatelessWidget {
                             width: 8.w,
                           ),
                           Text(
-                            'Скидки',
+                            MyStrings.kSales,
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyMedium
@@ -105,7 +105,7 @@ class TopButtons extends StatelessWidget {
                             width: 8.w,
                           ),
                           Text(
-                            'Избранное',
+                            MyStrings.kFavorites,
                             style:
                                 Theme.of(context).textTheme.bodyMedium?.copyWith(
                                       fontSize: 14.sp,
@@ -143,7 +143,7 @@ class TopButtons extends StatelessWidget {
                       width: 8.w,
                     ),
                     Text(
-                      'Уже покупали',
+                      MyStrings.kBoughtYet,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                             fontSize: 14.sp,
                           ),

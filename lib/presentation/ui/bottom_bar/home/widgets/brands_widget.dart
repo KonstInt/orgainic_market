@@ -21,7 +21,7 @@ class BrandsWidget extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(left: 16.w, bottom: 10.h),
           child: Text(
-            'Бренды',
+            MyStrings.kBrands,
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ),

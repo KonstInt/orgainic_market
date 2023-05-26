@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market/utils/constants.dart';
 
 class AboutUsWidget extends StatelessWidget {
   const AboutUsWidget({super.key});
@@ -34,7 +35,7 @@ class AboutUsWidget extends StatelessWidget {
                     padding:
                         EdgeInsets.symmetric(vertical: 8.0.h, horizontal: 4.w),
                     child: Text(
-                      'О компании',
+                      MyStrings.kAboutCompany,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                             color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 18.sp,
@@ -55,7 +56,7 @@ class AboutUsWidget extends StatelessWidget {
                     padding:
                         EdgeInsets.symmetric(vertical: 8.0.h, horizontal: 4.w),
                     child: Text(
-                      'Об органике',
+                      MyStrings.kAboutOrganic,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                             color: Theme.of(context).colorScheme.onBackground,
                             fontSize: 18.sp,
@@ -77,10 +78,10 @@ class AboutUsWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              textInf('Доставка'),
-              textInf('Оплата'),
-              textInf('Поддержка'),
-              textInf('Сертификаты'),
+              textInf(MyStrings.kDelivery),
+              textInf(MyStrings.kPayment),
+              textInf(MyStrings.kSupport),
+              textInf(MyStrings.kCertificates),
             ],
           ),
         ),

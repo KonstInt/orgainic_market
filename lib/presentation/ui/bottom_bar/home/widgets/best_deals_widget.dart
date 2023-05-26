@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market/utils/constants.dart';
 import '../../../../widgets/common/horizontal_list_products.dart';
 
 class BestDealsWidget extends StatelessWidget {
@@ -14,7 +15,7 @@ class BestDealsWidget extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(left: 16.w, bottom: 10.h),
           child: Text(
-            'Лучшие предложения',
+            MyStrings.kBestDeals,
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ),

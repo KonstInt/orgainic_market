@@ -56,7 +56,7 @@ class BottomItem extends StatelessWidget {
                     width: 10.w,
                   ),
                   Text(
-                    'В корзину',
+                    MyStrings.kInBasket,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           color: Theme.of(context).colorScheme.onBackground,
                           fontWeight: FontWeight.w600,

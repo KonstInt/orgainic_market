@@ -22,7 +22,7 @@ class SubCategoryListPage extends StatelessWidget {
           title: Column(
             children: [
               Text(
-                'Категория',
+               MyStrings.kCategory,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ],

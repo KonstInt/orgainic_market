@@ -16,7 +16,7 @@ class BasketNoItemPage extends StatelessWidget {
         elevation: 5,
         backgroundColor: Theme.of(context).colorScheme.onBackground,
         title: Text(
-          'Корзина',
+          MyStrings.kBasket,
           style: Theme.of(context).textTheme.titleMedium,
         ),
         centerTitle: true,
@@ -40,7 +40,7 @@ class BasketNoItemPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'В корзине пока пусто',
+                 MyStrings.kEmptyBasket,
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         fontSize: 24.sp,
                         fontWeight: FontWeight.w500,
@@ -48,7 +48,7 @@ class BasketNoItemPage extends StatelessWidget {
                 ),
                 SizedBox(height: 8.h,),
                 Text(
-                  'Добавленные товары будут отображаться здесь',
+                  MyStrings.kAddedItemsWillBeHere,
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
@@ -64,7 +64,7 @@ class BasketNoItemPage extends StatelessWidget {
                     padding:
                         EdgeInsets.symmetric(horizontal: 24.w, vertical: 5.h),
                     child: Text(
-                      'Отправиться за покупками',
+                      MyStrings.kGoShoping,
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w600,

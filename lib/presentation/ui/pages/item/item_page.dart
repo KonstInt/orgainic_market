@@ -204,13 +204,13 @@ class _ItemPageState extends State<ItemPage> with TickerProviderStateMixin {
                           },
                           tabs: const [
                             Tab(
-                              text: 'Описание',
+                              text: MyStrings.kDescription,
                             ),
                             Tab(
-                              text: 'Характеристики',
+                              text: MyStrings.kSpecification,
                             ),
                             Tab(
-                              text: 'Отзывы',
+                              text: MyStrings.kReviews,
                             )
                           ],
                         ),
@@ -238,7 +238,7 @@ class _ItemPageState extends State<ItemPage> with TickerProviderStateMixin {
                                maintainState: true,
                                 visible: selectedTab2Index == 1,
                                child: Text(
-                                  'Характеристики',
+                                  MyStrings.kSpecification,
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodyMedium!
@@ -253,7 +253,7 @@ class _ItemPageState extends State<ItemPage> with TickerProviderStateMixin {
                                 maintainState: true,
                                 visible: selectedTab2Index == 2,
                                 child: Text(
-                                  'Отзывы',
+                                  MyStrings.kReviews,
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodyMedium!

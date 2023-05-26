@@ -26,7 +26,7 @@ class _BasketPageState extends State<BasketPage> {
         elevation: 5,
         backgroundColor: Theme.of(context).colorScheme.onBackground,
         title: Text(
-          'Корзина',
+          MyStrings.kBasket,
           style: Theme.of(context).textTheme.titleMedium,
         ),
         centerTitle: true,
@@ -67,7 +67,7 @@ class _BasketPageState extends State<BasketPage> {
                 Padding(
                   padding: EdgeInsets.only(left: 16.0.w, top: 25.h),
                   child: Text(
-                    'Рекомендуем',
+                    MyStrings.kRecommend,
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           fontSize: 20.sp,
                         ),
@@ -112,7 +112,7 @@ class _BasketPageState extends State<BasketPage> {
                     ? TextButton(
                         onPressed: () {},
                         child: Text(
-                          'Перейти к оформлению',
+                          MyStrings.kGoToCheckout,
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium
@@ -132,7 +132,7 @@ class _BasketPageState extends State<BasketPage> {
                           ),
                         ),
                         child: Text(
-                          'Удалить',
+                          MyStrings.kDelete,
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium

@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market/domain/routes/router.gr.dart';
 import 'items_counter.dart';
 import 'price_widget.dart';
 import '../../../../../domain/models/cart_model.dart';
@@ -35,7 +37,14 @@ class _BasketProductItemState extends State<BasketProductItem> {
       splashColor: MyColors.kGreyChipBackground,
       //hoverColor: Colors.red,
       highlightColor: Theme.of(context).colorScheme.background,
-      onTap: () {},
+      onTap: () {
+
+        widget.isDeletedMode? setState(() {
+                    checkTrigger = !checkTrigger;
+
+                    widget.callbackDeletedIndex(widget.index, checkTrigger);
+                  }) :AutoRouter.of(context).push(ItemRoute(productId: widget.productInCart.product.productId));
+      },
       child: SizedBox(
         height: 70.h,
         width: double.infinity,

@@ -53,3 +53,45 @@ class MyAssets {
   static const String kBrandUglicheImage = 'assets/brands/ugliche.png';
   static const String kBrandWeledaImage = 'assets/brands/weleda.png';
 }
+
+class MyStrings {
+  static const String kMain = 'Главная';
+  static const String kCatalog = 'Каталог';
+  static const String kSearch = 'Поиск';
+  static const String kBasket = 'Корзина';
+  static const String kProfile = 'Профиль';
+  static const String kInBasket = 'В корзину';
+  static const String kEmptyBasket =  'В корзине пока пусто';
+  static const String kAddedItemsWillBeHere = 'Добавленные товары будут отображаться здесь';
+  static const String kGoShoping = 'Отправиться за покупками';
+  static const String kDelete = 'Удалить';
+  static const String kAddress = 'ул. Пушкина 15, д. 20, кв. 113';
+  static const String kCategories = 'Категории';
+  static const String kFavorites = 'Избранное';
+  static const String kBoughtYet = 'Уже покупали';
+  static const String kAboutCompany =  'О компании';
+  static const String kAboutOrganic = 'Об органике';
+  static const String kDelivery = 'Доставка';
+  static const String kPayment = 'Оплата';
+  static const String kSupport = 'Поддержка';
+  static const String kCertificates = 'Сертификаты';
+  static const String kPopularCategories = 'Популярные категории';
+  static const String kPrivateData = 'Личные данные';
+  static const String kMyBought = 'Мои заказы';
+  static const String kMyAddress = 'Мои адреса';
+  static const String kPaymentWays = 'Способы оплаты';
+  static const String kMyContactUs = 'Связаться с нами';
+  static const String kCategory = 'Категория';
+  static const String kDescription = 'Описание';
+  static const String kSpecification = 'Характеристики';
+  static const String kReviews = 'Отзывы';
+  static const String kOrganic = "Органика";
+  static const String kExpressDelivery = "Экспресс-доставка";
+  static const String kBrands = 'Бренды';
+  static const String kExit = "Выйти";
+  static const String kBestDeals = 'Лучшие предложения';
+  static const String kSales = 'Скидки';
+  static const String kRecommend = 'Рекомендуем';
+  static const String kGoToCheckout = 'Перейти к оформлению';
+
+}

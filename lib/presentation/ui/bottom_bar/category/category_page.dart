@@ -27,7 +27,7 @@ class CategoryPage extends StatelessWidget {
             ),
             SizedBox(width: 8.w),
             Text(
-              'ул. Пушкина 15, д. 20, кв. 113',
+              MyStrings.kAddress,
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ],

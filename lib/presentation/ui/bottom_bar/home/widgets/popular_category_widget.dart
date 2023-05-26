@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market/utils/constants.dart';
 import '../../../../widgets/common/product_category.dart';
 
 class PopularCategoryWidget extends StatelessWidget {
@@ -14,7 +15,7 @@ class PopularCategoryWidget extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(left: 16.w, bottom: 5.h),
           child: Text(
-            'Популярные категории',
+            MyStrings.kPopularCategories,
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ),

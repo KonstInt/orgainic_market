@@ -51,21 +51,21 @@ class BottomBar extends StatelessWidget {
                 ],
               ),
             ),
-            label: 'Главная',
+            label: MyStrings.kMain,
           ),
           bottomBarItem(
               selectedIndex: tabsRouter.activeIndex,
               index: 1,
               iconAsset: MyAssets.kCatalogIcon,
               withBadge: false,
-              label: 'Каталог',
+              label: MyStrings.kCatalog,
               context: context),
           bottomBarItem(
             selectedIndex: tabsRouter.activeIndex,
             index: 2,
             iconAsset: MyAssets.kFindIcon,
             withBadge: false,
-            label: 'Поиск',
+            label: MyStrings.kSearch,
             context: context,
           ),
           bottomBarItem(
@@ -76,7 +76,7 @@ class BottomBar extends StatelessWidget {
             badgeDigit: context.read<CartBloc>().cartModel?.productList != null
                 ? context.read<CartBloc>().cartModel!.productList.length
                 : 0,
-            label: 'Корзина',
+            label: MyStrings.kBasket,
             context: context,
           ),
           bottomBarItem(
@@ -84,7 +84,7 @@ class BottomBar extends StatelessWidget {
             index: 4,
             iconAsset: MyAssets.kProfileIcon,
             withBadge: false,
-            label: 'Профиль',
+            label: MyStrings.kProfile,
             context: context,
           )
         ],

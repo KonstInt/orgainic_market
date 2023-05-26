@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organic_market/utils/constants.dart';
 import '../../../../widgets/common/product_category.dart';
 
 class CategoryGridWidget extends StatelessWidget {
@@ -13,7 +14,7 @@ class CategoryGridWidget extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.only(left:16.0.w, bottom: 5.h),
-          child: Text('Категории', style: Theme.of(context).textTheme.titleLarge,),
+          child: Text(MyStrings.kCategories, style: Theme.of(context).textTheme.titleLarge,),
         ),
         GridView.builder(
               padding: EdgeInsets.symmetric(horizontal: 17.w, vertical: 10.h),

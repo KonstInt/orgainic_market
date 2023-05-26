@@ -35,14 +35,14 @@ class ListItemTag extends StatelessWidget {
           if(isOrganic)
           ItemTag(
             icon: MyAssets.kLeafImage,
-            text: "Органика",
+            text: MyStrings.kOrganic,
             color: MyColors.kGreenColor,
             textColor: MyColors.kWhiteColor,
           ),
           if(isExpressDelivery)
           ItemTag(
             icon: MyAssets.kFastCarImage,
-            text: "Экспресс-доставка",
+            text: MyStrings.kExpressDelivery,
             color: MyColors.kYellowColor,
             textColor: MyColors.kBlackColor,
           ),

@@ -29,7 +29,7 @@ class SubCategoryPage extends StatelessWidget {
               backgroundColor: Theme.of(context).colorScheme.onBackground,
               centerTitle: true,
               title: Text(
-                'Категория',
+                MyStrings.kCategory,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               shape: const RoundedRectangleBorder(
